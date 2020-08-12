@@ -13,11 +13,12 @@ class MyApp extends StatelessWidget {
       title: 'Face Recognation Flutter',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          buttonTheme: ButtonThemeData(
-            buttonColor: Colors.blue,
-          )),
+        primarySwatch: Colors.deepOrange,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.deepOrange,
+        ),
+      ),
       home: AuthCheck(),
     );
   }

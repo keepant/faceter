@@ -234,8 +234,8 @@ class _AddFaceState extends State<AddFace> {
         children: <Widget>[
           FloatingActionButton(
             onPressed: () {
+              _camera.stopImageStream();
               _onCapturePressed(context);
-              //handleSave();
             },
             child: Icon(
               Icons.camera,
