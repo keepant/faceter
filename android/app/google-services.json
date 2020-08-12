@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "889754259761",
+    "firebase_url": "https://faceter-39fb2.firebaseio.com",
+    "project_id": "faceter-39fb2",
+    "storage_bucket": "faceter-39fb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889754259761:android:ff42cc8cc144c49f19a010",
+        "android_client_info": {
+          "package_name": "com.keepant.faceter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889754259761-en9mh64tq91akiu0vbjnko0oua0k352c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.keepant.faceter",
+            "certificate_hash": "462d9de0054101503f94dec8e0334e59f161c74f"
+          }
+        },
+        {
+          "client_id": "889754259761-m1lqink762if6tb7egohm9tgovhcf3sf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJhvR3NcfUBStVn824-lwiWHVbB3ZZNTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889754259761-m1lqink762if6tb7egohm9tgovhcf3sf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
