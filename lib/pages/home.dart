@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:faceter/pages/absen.dart';
 import 'package:faceter/pages/add_face.dart';
 import 'package:faceter/pages/login/login_page.dart';
 import 'package:faceter/pages/result.dart';
@@ -104,7 +105,9 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: Container(
         child: RaisedButton(
           padding: EdgeInsets.all(17.0),
-          onPressed: () {},
+          onPressed: () {
+            Get.to(Absen());
+          },
           child: Text(
             'ABSEN',
             style: TextStyle(
@@ -163,7 +166,7 @@ class _HomeState extends State<Home> {
                                 size: 19.0,
                               ),
                               onPressed: () {
-                                editFace();
+                                Get.to(AddFace());
                               },
                             ),
                           ],

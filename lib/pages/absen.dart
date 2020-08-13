@@ -16,12 +16,12 @@ import '../utils/utils.dart';
 import 'package:quiver/collection.dart';
 import 'package:path/path.dart';
 
-class AddFace extends StatefulWidget {
+class Absen extends StatefulWidget {
   @override
-  _AddFaceState createState() => _AddFaceState();
+  _AbsenState createState() => _AbsenState();
 }
 
-class _AddFaceState extends State<AddFace> {
+class _AbsenState extends State<Absen> {
   SharedPreferences sharedPreferences;
   String _userId;
   File jsonFile;
@@ -36,6 +36,7 @@ class _AddFaceState extends State<AddFace> {
   List e1;
   bool _faceFound = false;
   bool isEnabled = true;
+  bool _isUserFound = false;
 
   _getUserId() async {
     sharedPreferences = await SharedPreferences.getInstance();
@@ -207,15 +208,7 @@ class _AddFaceState extends State<AddFace> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add face'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(FontAwesomeIcons.trash),
-            onPressed: () {
-              _resetFile();
-            },
-          ),
-        ],
+        title: const Text('Absen'),
       ),
       body: Stack(
         children: <Widget>[
@@ -227,7 +220,7 @@ class _AddFaceState extends State<AddFace> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           Visibility(
-            visible: _faceFound,
+            visible: _faceFound && _isUserFound,
             child: FloatingActionButton(
               onPressed: () {
                 _camera.stopImageStream();
@@ -290,18 +283,21 @@ class _AddFaceState extends State<AddFace> {
     if (data.length == 0) return "Data tidak ada";
     double minDist = 999;
     double currDist = 0.0;
-    String predRes = "Tidak Dikenali";
+    String predRes = "tidak dikenali";
     for (String label in data.keys) {
       currDist = euclideanDistance(data[label], currEmb);
       if (currDist <= threshold && currDist < minDist) {
         minDist = currDist;
         predRes = label;
       }
+      _isUserFound = false;
     }
     print(minDist.toString() + " " + predRes);
     if (predRes == _userId) {
       predRes = 'Ini kamu';
+      _isUserFound = true;
     }
+
     return predRes;
   }
 

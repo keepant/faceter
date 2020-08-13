@@ -48,7 +48,6 @@ class _ResultState extends State<Result> {
     _getUserId();
     _getImageAndDetectFaces();
     loadModel();
-  
   }
 
   _getImageAndDetectFaces() async {
@@ -195,9 +194,9 @@ class _ResultState extends State<Result> {
                         ),
                       ),
                       onTap: () async {
-                        // String fileName =
-                        //     "$_userId-photo-${DateTime.now()}.png";
-                        // String filePath = 'verify/$fileName';
+
+                        Get.off(Home());
+                        print('Success add');
                       },
                     ),
                   ],
